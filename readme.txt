@@ -10,7 +10,7 @@ Provides wordpress widgets for displaying public posts from Yahoo! Meme. Memepre
 
 == Description ==
 
-Provides wordpress widgets for displaying public posts from Yahoo! Meme. Memepress is SEO ready and provides options to noindex/nofollow your Meme posts.
+Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http://meme.yahoo.com/). Memepress is SEO ready and provides options to noindex/nofollow your Meme posts.
 
 **Demo**
 
