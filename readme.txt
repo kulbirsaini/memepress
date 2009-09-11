@@ -51,7 +51,7 @@ The plug in provides the following CSS classes:
 
 == Installation ==
 
-1. Unzip memepress.zip.
+1. Unzip memepress-yahoo-meme.zip.
 2. Copy memepress folder to wp-content/plugins/ folder.
 3. Activate the plugin by visiting wp-admin/plugins.php.
 4. Go to wp-admin/widgets.php to add Memepress widget.
