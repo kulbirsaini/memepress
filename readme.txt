@@ -1,6 +1,6 @@
 === Memepress - Wordpress Widgets for Yahoo! Meme Public Posts ===
 Contributors: kulbirsaini
-Tags: widget, yahoo, meme, yahoo meme, sidebar meme
+Tags: widget, yahoo, meme, yahoo meme, sidebar meme, yahoomeme, plugin
 Requires at least: 2.1
 Tested up to: 3.0
 Stable tag: trunk
