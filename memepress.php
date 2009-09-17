@@ -34,16 +34,16 @@ define('MAGPIE_INPUT_ENCODING', 'UTF-8');
 define('MAGPIE_OUTPUT_ENCODING', 'UTF-8');
 
 // Memepress Plugin Options.
-$memepress_options['widget_fields']['title'] = array('label'=>__('Title:'), 'type'=>'text', 'default'=>__('Memepress'));
-$memepress_options['widget_fields']['username'] = array('label'=>__('Username:'), 'type'=>'text', 'default'=>'');
-$memepress_options['widget_fields']['count'] = array('label'=>__('Number of links:'), 'type'=>'text', 'default'=>'5');
-$memepress_options['widget_fields']['timestamps'] = array('label'=>__('Show timestamps:'), 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['link'] = array('label'=>__('Link Posts:'), 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['list'] = array('label'=>__('Display Posts as a list:'), 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['width'] = array('label'=>'<abbr style="border-bottom: 1px dotted grey;" title="'.__('Leave blank for auto adjustment. Examples: 200px or 50%').'">Width</abbr>:', 'type'=>'text', 'default'=>'');
-$memepress_options['widget_fields']['noindex'] = array('label'=>__('Noindex Posts:'), 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['nofollow'] = array('label'=>__('Nofollow Posts:'), 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['encode_utf8'] = array('label'=>__('UTF8 Encode:'), 'type'=>'checkbox', 'default'=>false);
+$memepress_options['widget_fields']['title'] = array('label'=>__('Title').':', 'type'=>'text', 'default'=>__('Memepress'));
+$memepress_options['widget_fields']['username'] = array('label'=>__('Username').':', 'type'=>'text', 'default'=>'');
+$memepress_options['widget_fields']['count'] = array('label'=>__('Number of links').':', 'type'=>'text', 'default'=>'5');
+$memepress_options['widget_fields']['timestamps'] = array('label'=>__('Show timestamps').':', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['link'] = array('label'=>__('Link Posts').':', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['list'] = array('label'=>__('Display Posts as a list').':', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['width'] = array('label'=>'<abbr style="border-bottom: 1px dotted grey;" title="'.__('Leave blank for auto adjustment. Examples: 200px or 50%').'">'.__('Width').'</abbr>:', 'type'=>'text', 'default'=>'');
+$memepress_options['widget_fields']['noindex'] = array('label'=>__('Noindex Posts').':', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['nofollow'] = array('label'=>__('Nofollow Posts').':', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['encode_utf8'] = array('label'=>__('UTF8 Encode').':', 'type'=>'checkbox', 'default'=>false);
 
 $memepress_options['prefix'] = 'memepress';
 
