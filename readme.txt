@@ -14,10 +14,11 @@ Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http:/
 
 **Note:** Yahoo! Meme is still invite only. If you need an account, send me an email using [this contact form](http://gofedora.com/contact).
 
-**Demo** Live demo of this plugin can be seen [here](http://gofedora.com/).
+**Demo:** Live demo of this plugin can be seen [here](http://gofedora.com/).
 
 **Languages Supported**
-    Turkish (tr_TR) [Yalcin Erdemir](http://y4lcin.com/)
+
+Turkish (tr_TR) [Yalcin Erdemir](http://y4lcin.com/)
 
 **Features**
 
@@ -38,11 +39,13 @@ If you are interested in translating Memepress in your language, you have to tra
 **Example**
 
 *Untranslated*
+
 `#: memepress.php:37`
 `msgid "Title"`
 `msgstr ""`
 
 *Translated*
+
 `#: memepress.php:37`
 `msgid "Title"`
 `msgstr "_WHATEVER_TITLE_IS_WRITTEN_AS_IN_YOUR_LANGUAGE_"`
