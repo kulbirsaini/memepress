@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Memepress ( Yahoo! Meme )
-Version: 0.1
+Version: 0.2
 Plugin URI: http://gofedora.com/memepress/
 Description: Provides one or more wordpress widgets for displaying public posts from Yahoo! Meme acounts. Inspired by <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for Wordpress</a>. Memepress is SEO ready and provides options to noindex and/or nofollow your Yahoo! Meme posts in your widget.
 Author: Kulbir Saini 
@@ -34,23 +34,22 @@ define('MAGPIE_INPUT_ENCODING', 'UTF-8');
 define('MAGPIE_OUTPUT_ENCODING', 'UTF-8');
 
 // Memepress Plugin Options.
-$memepress_options['widget_fields']['title'] = array('label'=>'Title:', 'type'=>'text', 'default'=>'Memepress');
-$memepress_options['widget_fields']['username'] = array('label'=>'Username:', 'type'=>'text', 'default'=>'');
-$memepress_options['widget_fields']['count'] = array('label'=>'Number of links:', 'type'=>'text', 'default'=>'5');
-$memepress_options['widget_fields']['timestamps'] = array('label'=>'Show timestamps:', 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['link'] = array('label'=>'Link Posts:', 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['list'] = array('label'=>'Display Posts as a list:', 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['width'] = array('label'=>'<abbr style="border-bottom: 1px dotted grey;" title="Leave blank for auto adjustment. Examples: 200px or 50%">Width</abbr>:', 'type'=>'text', 'default'=>'');
-$memepress_options['widget_fields']['noindex'] = array('label'=>'Noindex Posts:', 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['nofollow'] = array('label'=>'Nofollow Posts:', 'type'=>'checkbox', 'default'=>true);
-$memepress_options['widget_fields']['encode_utf8'] = array('label'=>'UTF8 Encode:', 'type'=>'checkbox', 'default'=>false);
-$memepress_options['widget_fields']['credits'] = array('label'=>'Give credits:', 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['title'] = array('label'=>__('Title:'), 'type'=>'text', 'default'=>__('Memepress'));
+$memepress_options['widget_fields']['username'] = array('label'=>__('Username:'), 'type'=>'text', 'default'=>'');
+$memepress_options['widget_fields']['count'] = array('label'=>__('Number of links:'), 'type'=>'text', 'default'=>'5');
+$memepress_options['widget_fields']['timestamps'] = array('label'=>__('Show timestamps:'), 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['link'] = array('label'=>__('Link Posts:'), 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['list'] = array('label'=>__('Display Posts as a list:'), 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['width'] = array('label'=>'<abbr style="border-bottom: 1px dotted grey;" title="'.__('Leave blank for auto adjustment. Examples: 200px or 50%').'">Width</abbr>:', 'type'=>'text', 'default'=>'');
+$memepress_options['widget_fields']['noindex'] = array('label'=>__('Noindex Posts:'), 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['nofollow'] = array('label'=>__('Nofollow Posts:'), 'type'=>'checkbox', 'default'=>true);
+$memepress_options['widget_fields']['encode_utf8'] = array('label'=>__('UTF8 Encode:'), 'type'=>'checkbox', 'default'=>false);
 
 $memepress_options['prefix'] = 'memepress';
 
 
 // Render all the Yahoo! Meme Public Posts for a specifif user.
-function memepress_render_posts($username = '', $count = 1, $list = false, $timestamps = true, $link  = true, $link_rel = '', $width = '', $encode_utf8 = false, $credits = true) {
+function memepress_render_posts($username = '', $count = 1, $list = false, $timestamps = true, $link  = true, $link_rel = '', $width = '', $encode_utf8 = false) {
 
   global $memepress_options;
   include_once(ABSPATH . WPINC . '/rss.php');
@@ -61,23 +60,33 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
   echo '<style id="memepress_Widget_styles" type="text/css">
     .memepress embed {width: '.$width.';height: 100%;}
     .memepress img {width: '.$width.';height: 100%;}
-    .memepress-timestamp {font-size: 10px;}
-    li.memepress {background: none; font-size: 12px; font-weight: normal; padding: 4px 0 4px 4px; border-bottom: 1px dotted grey;}
-    </style>';
+    .memepress-timestamp {font-size: 10px;}'."\n";
+  if ($list) {
+    echo 'li.memepress-item {background: none; font-size: 12px; font-weight: normal; padding: 4px 0 4px 4px; border-bottom: 1px dotted grey; list-style-type: none;}'."\n";
+  }
+  else {
+    echo 'p.memepress-item {background: none; font-size: 12px; font-weight: normal; padding: 4px 0 4px 4px; border-bottom: 1px dotted grey; list-style-type: none;}'."\n";
+  }
+  echo '</style>';
 
 
   // Start list if 
-  if ($list) echo '<ul class="memepress">';
+  if ($list) {
+      echo '<ul class="memepress">';
+  }
+  else {
+      echo '<div class="memepress">';
+  }
 
   if ($username == '') {
     if ($list) echo '<li>';
-    echo 'Please provide your Yahoo! Meme username in widget settings.';
+    echo _e('Please provide your Yahoo! Meme username in widget settings.');
     if ($list) echo '</li>';
   } 
   else {
     if ( empty($memes->items) ) {
       if ($list) echo '<li>';
-      echo 'Time to post something on your meme :)';
+      echo _e('Time to post something on your meme :)');
       if ($list) echo '</li>';
     } 
     else {
@@ -105,7 +114,7 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
           else
             $human_time = date(__('Y/m/d'), $time);
 
-          echo sprintf( __('%s', 'Memepress'),' <span class="memepress-timestamp"><abbr title="' . date(__('Y/m/d H:i:s'), $time) . '">' . $human_time . '</abbr></span>' );
+          echo sprintf( __('%s', 'memepress'),' <span class="memepress-timestamp"><abbr title="' . date(__('Y/m/d H:i:s'), $time) . '">' . $human_time . '</abbr></span>' );
         }          
 
         if ($list) echo '</li>'; elseif ($count != 1) echo '</p>';
@@ -114,15 +123,23 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
       }
     }
   }
-  if ($credits) {
-    if ($list) {
+  if ($list) {
 ?>
-        <li class="memepress-credits" style="font-size: 8px;">Powered by <a style="text-decoration: none;" href="http://gofedora.com/memepress/">Memepress</a></li>
+  <li style="font-size: 9px; list-style-type: none !important; background: none !important; list-style-image: none;"><?php _e('Powered by'); ?> <a style="text-decoration: none;" href="http://gofedora.com/memepress/">Memepress</a></li>
 <?php
-    }
+  }
+  else {
+?>
+  <p style="font-size: 9px; background: none !important;"><?php _e('Powered by'); ?> <a style="text-decoration: none;" href="http://gofedora.com/memepress/">Memepress</a></p>
+<?php
   }
   // Close list
-  if ($list) echo '</ul>';
+  if ($list) {
+      echo '</ul>';
+  }
+  else {
+      echo '</div>';
+  }
 }
 
 
@@ -150,7 +167,7 @@ function widget_memepress_init() {
       }
     }
 
-    $memes = fetch_rss('http://meme.yahoo.com/'.$item['username'].'/feed/en');
+    //$memes = fetch_rss('http://meme.yahoo.com/'.$item['username'].'/feed/en');
 
     // Formulate rel attribute for links.
     $link_rel = '';
@@ -163,7 +180,7 @@ function widget_memepress_init() {
 
     // Render everything.
     echo $before_widget . $before_title . '<a href="http://meme.yahoo.com/' .$item['username']. '" ' . $link_rel . ' class="memepress-title">'. $item['title'] . '</a>' . $after_title;
-    memepress_render_posts($item['username'], $item['count'], $item['list'], $item['timestamps'], $item['link'], $link_rel, $item['width'], $item['encode_utf8'], $item['credits']);
+    memepress_render_posts($item['username'], $item['count'], $item['list'], $item['timestamps'], $item['link'], $link_rel, $item['width'], $item['encode_utf8']);
     echo $after_widget;
   }
 
