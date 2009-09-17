@@ -1,0 +1,129 @@
+# Memepress (English) PO file 
+# Copyright 2009 Kulbir Saini <saini@saini.co.in>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+# 
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: memepress-yahoo-meme\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/memepress-yahoo-meme\n"
+"POT-Creation-Date: 2009-09-17 13:42+0000\n"
+"PO-Revision-Date: 2009-09-17 13:42+0000\n"
+"Last-Translator: Kulbir Saini <saini@saini.co.in>\n"
+"Language-Team: Kulbir Saini <saini@saini.co.in>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: memepress.php:37
+msgid "Title"
+msgstr ""
+
+#: memepress.php:37
+msgid "Memepress"
+msgstr ""
+
+#: memepress.php:38
+msgid "Username"
+msgstr ""
+
+#: memepress.php:39
+msgid "Number of links"
+msgstr ""
+
+#: memepress.php:40
+msgid "Show timestamps"
+msgstr ""
+
+#: memepress.php:41
+msgid "Link Posts"
+msgstr ""
+
+#: memepress.php:42
+msgid "Display Posts as a list"
+msgstr ""
+
+#: memepress.php:43
+msgid "Leave blank for auto adjustment. Examples: 200px or 50%"
+msgstr ""
+
+#: memepress.php:43
+msgid "Width"
+msgstr ""
+
+#: memepress.php:44
+msgid "Noindex Posts"
+msgstr ""
+
+#: memepress.php:45
+msgid "Nofollow Posts"
+msgstr ""
+
+#: memepress.php:46
+msgid "UTF8 Encode"
+msgstr ""
+
+#: memepress.php:83
+msgid "Please provide your Yahoo! Meme username in widget settings."
+msgstr ""
+
+#: memepress.php:89
+msgid "Time to post something on your meme :)"
+msgstr ""
+
+#: memepress.php:113
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: memepress.php:115
+msgid "Y/m/d"
+msgstr ""
+
+#: memepress.php:117
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: memepress.php:117
+msgid "Y/m/d H:i:s"
+msgstr ""
+
+#: memepress.php:128 memepress.php:133
+msgid "Powered by"
+msgstr ""
+
+#: memepress.php:215
+msgid "label"
+msgstr ""
+
+#: memepress.php:237
+msgid "Memepress Widgets for Yahoo! Meme Public Posts"
+msgstr ""
+
+#: memepress.php:238
+msgid "Select the number of Memepress Widgets?"
+msgstr ""
+
+#: memepress.php:242
+msgid "Save"
+msgstr ""
+
+#: memepress.php:253
+#, php-format
+msgid "Memepress Widget %d"
+msgstr ""
