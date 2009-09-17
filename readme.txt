@@ -18,7 +18,8 @@ Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http:/
 
 **Languages Supported**
 
-Turkish (tr_TR) [Yalcin Erdemir](http://y4lcin.com/)
+1. English (en_US)
+2. Turkish (tr_TR) - [Yalcin Erdemir](http://y4lcin.com/)
 
 **Features**
 
