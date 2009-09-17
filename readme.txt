@@ -10,7 +10,7 @@ Provides wordpress widgets for displaying public posts from Yahoo! Meme. Memepre
 
 == Description ==
 
-Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http://meme.yahoo.com/). Memepress is SEO ready and provides options to noindex/nofollow your Meme posts.
+Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http://meme.yahoo.com/). Memepress is SEO ready and provides options to noindex/nofollow your Meme posts. Memepress supports internationalization.
 
 **Note**
 
@@ -31,6 +31,27 @@ Live demo of this plugin can be seen [here](http://gofedora.com/).
     *  Options to noindex/nofollow permalinks to Yahoo! Meme posts.
     *  Display posts as list or using <p> html attribute.
     *  Uniquely identifiable class for text/photo/video/music to control layout via css classes.
+    *  Supports internationalization (i18n).
+
+**Languages Supported**
+
+    *  Turkish (tr_TR) [Yalcin Erdemir](http://y4lcin.com/)
+
+**Translation**
+
+If you are interested in translating Memepress in your language, you have to translate just a few strings :) Download the [memepress.pot (POT) file](http://plugins.svn.wordpress.org/memepress-yahoo-meme/trunk/i18n/memepress.pot) and translate the strings in your language. Email the resulting .pot file to kulbirsaini25 [AT] gmail.com . 
+
+**Example**
+
+*Untranslated*
+#: memepress.php:37
+msgid "Title"
+msgstr ""
+
+*Translated*
+#: memepress.php:37
+msgid "Title"
+msgstr "_WHATEVER_TITLE_IS_WRITTEN_AS_IN_YOUR_LANGUAGE_"
 
 **Usage**
 

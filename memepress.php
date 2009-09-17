@@ -5,6 +5,7 @@ Plugin Name: Memepress ( Yahoo! Meme )
 Version: 0.2
 Plugin URI: http://gofedora.com/memepress/
 Description: Provides one or more wordpress widgets for displaying public posts from Yahoo! Meme acounts. Inspired by <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for Wordpress</a>. Memepress is SEO ready and provides options to noindex and/or nofollow your Yahoo! Meme posts in your widget.
+Text Domain: memepress
 Author: Kulbir Saini 
 Author URI: http://gofedora.com/
  */
@@ -26,6 +27,13 @@ Author URI: http://gofedora.com/
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
+/*
+ * Memepress Plugin Localization.
+ */
+$locale = get_locale();
+$mofile = WP_PLUGIN_DIR.'/'.plugin_basename(dirname(__FILE__)).'/i18n/memepress' . '-' . $locale . '.mo';
+load_textdomain('memepress', $mofile);
 
 // Magpie Options.
 define('MAGPIE_CACHE_ON', 1);
@@ -59,8 +67,8 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
 
   echo '<style id="memepress_Widget_styles" type="text/css">
     .memepress embed {width: '.$width.';height: 100%;}
-    .memepress img {width: '.$width.';height: 100%;}
-    .memepress-timestamp {font-size: 10px;}'."\n";
+  .memepress img {width: '.$width.';height: 100%;}
+  .memepress-timestamp {font-size: 10px;}'."\n";
   if ($list) {
     echo 'li.memepress-item {background: none; font-size: 12px; font-weight: normal; padding: 4px 0 4px 4px; border-bottom: 1px dotted grey; list-style-type: none;}'."\n";
   }
@@ -72,10 +80,10 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
 
   // Start list if 
   if ($list) {
-      echo '<ul class="memepress">';
+    echo '<ul class="memepress">';
   }
   else {
-      echo '<div class="memepress">';
+    echo '<div class="memepress">';
   }
 
   if ($username == '') {
@@ -135,10 +143,10 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
   }
   // Close list
   if ($list) {
-      echo '</ul>';
+    echo '</ul>';
   }
   else {
-      echo '</div>';
+    echo '</div>';
   }
 }
 
@@ -166,8 +174,6 @@ function widget_memepress_init() {
         $item[$key] = $field['default'];
       }
     }
-
-    //$memes = fetch_rss('http://meme.yahoo.com/'.$item['username'].'/feed/en');
 
     // Formulate rel attribute for links.
     $link_rel = '';
