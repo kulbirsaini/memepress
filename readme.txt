@@ -90,6 +90,8 @@ The plug in provides the following CSS classes:
 
 [Michael Feichtinger](http://bohuco.net/blog) - For the multi-widget feature.
 
+[Yalcin Erdemir](http://y4lcin.com/) - For Turkish Translation.
+
 == Contact ==
 
 Suggestion, fixes, rants, congratulations, gifts et al to kulbirsaini25 [at] gmail [dot] com
