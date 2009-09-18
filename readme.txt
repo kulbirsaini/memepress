@@ -12,7 +12,7 @@ Provides wordpress widgets for displaying public posts from Yahoo! Meme. Memepre
 
 Provides wordpress widgets for displaying public posts from [Yahoo! Meme](http://meme.yahoo.com/). Memepress is SEO ready and provides options to noindex/nofollow your Meme posts. Memepress supports internationalization.
 
-**Note:** Yahoo! Meme is still invite only. If you need an account, send me an email using [this contact form](http://gofedora.com/contact).
+**Note:** Yahoo! Meme is still invite only.
 
 **Demo:** Live demo of this plugin can be seen [here](http://gofedora.com/).
 
