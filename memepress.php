@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Memepress ( Yahoo! Meme )
-Version: 0.2
+Version: 0.3
 Plugin URI: http://gofedora.com/memepress/
 Description: Provides one or more wordpress widgets for displaying public posts from Yahoo! Meme acounts. Inspired by <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for Wordpress</a>. Memepress is SEO ready and provides options to noindex and/or nofollow your Yahoo! Meme posts in your widget.
 Text Domain: memepress
