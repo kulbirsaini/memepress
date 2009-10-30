@@ -61,14 +61,14 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
 
   global $memepress_options;
   include_once(ABSPATH . WPINC . '/rss.php');
-  $memes = fetch_rss('http://meme.yahoo.com/'.$username.'/feed/en');
+  $memes = fetch_rss("http://meme.yahoo.com/$username/feed/en");
 
   $width = ($width == '') ? '100%' : $width;
 
-  echo '<style id="memepress_Widget_styles" type="text/css">
-    .memepress embed {width: '.$width.';height: 100%;}
-  .memepress img {width: '.$width.';height: 100%;}
-  .memepress-timestamp {font-size: 10px;}'."\n";
+  echo "<style id='memepress_Widget_styles' type='text/css'>
+    .memepress embed {width: $width;height: $width;}
+    .memepress img {width: $width;height: $width;}
+    .memepress-timestamp {font-size: 10px;}\n";
   if ($list) {
     echo 'li.memepress-item {background: none; font-size: 12px; font-weight: normal; padding: 4px 0 4px 4px; border-bottom: 1px dotted grey; list-style-type: none;}'."\n";
   }
@@ -104,7 +104,7 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
         if($encode_utf8) $message = utf8_encode($message);
         $memelink = $meme['link'];
 
-        // meme may be text/photo/video/music.
+        // meme may be text/photo/video/audio.
         $list_class = $meme['category'];
 
         if ($list) echo '<li class="memepress-item memepress-'. $list_class .'">'; elseif ($num != 1) echo '<p class="memepress-item memepress-'. $list_class .'">';
@@ -133,7 +133,7 @@ function memepress_render_posts($username = '', $count = 1, $list = false, $time
   }
   if ($list) {
 ?>
-  <li style="font-size: 9px; list-style-type: none !important; background: none !important; list-style-image: none;"><?php _e('Powered by', 'memepress'); ?> <a style="text-decoration: none;" href="http://gofedora.com/memepress/">Memepress</a></li>
+  <li style="font-size: 9px; list-style-type: none !important; background: none !important; list-style-image: none;"><?php _e('Powered by', 'memepress'); ?> <a style="text-decoration: none;" href="http://gofedora.com/">Memepress</a></li>
 <?php
   }
   else {
